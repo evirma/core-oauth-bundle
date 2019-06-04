@@ -2,6 +2,7 @@
 
 namespace Evirma\Bundle\CoreOauthBundle\DependencyInjection;
 
+use Evirma\Bundle\CoreOauthBundle\Service\OAuthService;
 use Symfony\Component\DependencyInjection\Definition;
 use Symfony\Component\DependencyInjection\Reference;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
@@ -25,9 +26,9 @@ class CoreOauthExtension extends Extension
         $definition->addArgument([ 'timeout' => 10 ]);
         $container->setDefinition('core_oauth.oauth.guzzle', $definition);
 
-        $definition = new Definition('Evirma\Bundle\CoreOauthBundle\Service\OAuthService');
+        $definition = new Definition(OAuthService::class);
         $definition->addMethodCall('setContainer', [ new Reference('service_container') ]);
-        $container->setDefinition('core_oauth.oauth', $definition);
+        $container->setDefinition(OAuthService::class, $definition);
 
         $definition = new Definition('Evirma\Bundle\CoreOauthBundle\OAuth\RequestDataStorage\SessionStorage');
         $definition->addArgument(new Reference('session'));
