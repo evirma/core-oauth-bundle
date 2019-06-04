@@ -14,12 +14,7 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder('core_oauth');
-        if (\method_exists($treeBuilder, 'getRootNode')) {
-            $rootNode = $treeBuilder->getRootNode();
-        } else {
-            $rootNode = $treeBuilder->root('core_oauth');
-        }
-        $rootNode
+        $treeBuilder->getRootNode()
             ->children()
                 ->scalarNode('redirect_uri_route')
                     ->cannotBeEmpty()
