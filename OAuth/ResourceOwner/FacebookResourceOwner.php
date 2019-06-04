@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Meniam\Bundle\CoreOauthBundle\OAuth\ResourceOwner;
+namespace Evirma\Bundle\CoreOauthBundle\OAuth\ResourceOwner;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\OptionsResolver\OptionsResolver;

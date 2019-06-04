@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Meniam\Bundle\CoreOauthBundle\OAuth\RequestDataStorage;
+namespace Evirma\Bundle\CoreOauthBundle\OAuth\RequestDataStorage;
 
-use Meniam\Bundle\CoreOauthBundle\OAuth\RequestDataStorageInterface;
-use Meniam\Bundle\CoreOauthBundle\OAuth\ResourceOwnerInterface;
+use Evirma\Bundle\CoreOauthBundle\OAuth\RequestDataStorageInterface;
+use Evirma\Bundle\CoreOauthBundle\OAuth\ResourceOwnerInterface;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 /**

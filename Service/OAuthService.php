@@ -1,8 +1,9 @@
 <?php
-namespace Meniam\Bundle\CoreOauthBundle\Service;
 
-use Meniam\Bundle\CoreOauthBundle\Exception\ServiceNotFoundException;
-use Meniam\Bundle\CoreOauthBundle\Service;
+namespace Evirma\Bundle\CoreOauthBundle\Service;
+
+use Evirma\Bundle\CoreOauthBundle\Exception\ServiceNotFoundException;
+use Evirma\Bundle\CoreOauthBundle\Service;
 use Symfony\Component\DependencyInjection\ContainerAwareTrait;
 use Symfony\Component\HttpFoundation\Request;
 

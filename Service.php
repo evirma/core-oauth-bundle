@@ -1,7 +1,7 @@
 <?php
-namespace Meniam\Bundle\CoreOauthBundle;
+namespace Evirma\Bundle\CoreOauthBundle;
 
-use Meniam\Bundle\CoreOauthBundle\OAuth\ResourceOwnerInterface;
+use Evirma\Bundle\CoreOauthBundle\OAuth\ResourceOwnerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 

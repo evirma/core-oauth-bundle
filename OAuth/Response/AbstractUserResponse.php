@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Meniam\Bundle\CoreOauthBundle\OAuth\Response;
+namespace Evirma\Bundle\CoreOauthBundle\OAuth\Response;
 
-use Meniam\Bundle\CoreOauthBundle\OAuth\ResourceOwnerInterface;
-use Meniam\Bundle\CoreOauthBundle\OAuth\OAuthToken;
+use Evirma\Bundle\CoreOauthBundle\OAuth\ResourceOwnerInterface;
+use Evirma\Bundle\CoreOauthBundle\OAuth\OAuthToken;
 use Symfony\Component\Security\Core\Exception\AuthenticationException;
 
 /**

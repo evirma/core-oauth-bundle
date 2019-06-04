@@ -4,7 +4,7 @@
   "license": "MIT",
   "description": "",
   "autoload": {
-    "psr-4": { "Meniam\\Bundle\\CoreOauthBundle\\": "" }
+    "psr-4": { "Evirma\\Bundle\\CoreOauthBundle\\": "" }
   },
   "require": {
     "php": ">=7.0.0",
@@ -16,3 +16,4 @@
     "guzzlehttp/guzzle": "~6.1"
   }
 }
+`

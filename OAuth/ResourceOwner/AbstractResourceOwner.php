@@ -2,16 +2,16 @@
 /** @noinspection PhpUnusedParameterInspection */
 /** @noinspection PhpDocSignatureInspection */
 
-namespace Meniam\Bundle\CoreOauthBundle\OAuth\ResourceOwner;
+namespace Evirma\Bundle\CoreOauthBundle\OAuth\ResourceOwner;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Psr7\Request;
-use Meniam\Bundle\CoreOauthBundle\OAuth\Exception\HttpTransportException;
-use Meniam\Bundle\CoreOauthBundle\OAuth\RequestDataStorageInterface;
-use Meniam\Bundle\CoreOauthBundle\OAuth\ResourceOwnerInterface;
-use Meniam\Bundle\CoreOauthBundle\OAuth\Response\PathUserResponse;
-use Meniam\Bundle\CoreOauthBundle\OAuth\Response\UserResponseInterface;
+use Evirma\Bundle\CoreOauthBundle\OAuth\Exception\HttpTransportException;
+use Evirma\Bundle\CoreOauthBundle\OAuth\RequestDataStorageInterface;
+use Evirma\Bundle\CoreOauthBundle\OAuth\ResourceOwnerInterface;
+use Evirma\Bundle\CoreOauthBundle\OAuth\Response\PathUserResponse;
+use Evirma\Bundle\CoreOauthBundle\OAuth\Response\UserResponseInterface;
 use InvalidArgumentException;
 use Psr\Http\Message\ResponseInterface;
 use Symfony\Component\HttpFoundation\Request as HttpRequest;

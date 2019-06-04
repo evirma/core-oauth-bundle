@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Meniam\Bundle\CoreOauthBundle\OAuth\Exception;
+namespace Evirma\Bundle\CoreOauthBundle\OAuth\Exception;
 
 use Symfony\Component\Security\Core\Exception\AuthenticationException;
 

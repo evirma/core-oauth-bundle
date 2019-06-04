@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace Meniam\Bundle\CoreOauthBundle\OAuth\ResourceOwner;
+namespace Evirma\Bundle\CoreOauthBundle\OAuth\ResourceOwner;
 
-use Meniam\Bundle\CoreOauthBundle\OAuth\OAuthToken;
-use Meniam\Bundle\CoreOauthBundle\Security\OAuthErrorHandler;
-use Meniam\Bundle\CoreOauthBundle\Security\OAuthUtils;
+use Evirma\Bundle\CoreOauthBundle\OAuth\OAuthToken;
+use Evirma\Bundle\CoreOauthBundle\Security\OAuthErrorHandler;
+use Evirma\Bundle\CoreOauthBundle\Security\OAuthUtils;
 use Psr\Http\Message\ResponseInterface;
 use Symfony\Component\HttpFoundation\Request as HttpRequest;
 use Symfony\Component\OptionsResolver\OptionsResolver;

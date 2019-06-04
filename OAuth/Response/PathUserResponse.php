@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Meniam\Bundle\CoreOauthBundle\OAuth\Response;
+namespace Evirma\Bundle\CoreOauthBundle\OAuth\Response;
 
 /**
  * Class parsing the properties by given path options.

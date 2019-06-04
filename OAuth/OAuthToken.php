@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Meniam\Bundle\CoreOauthBundle\OAuth;
+namespace Evirma\Bundle\CoreOauthBundle\OAuth;
 
 use Symfony\Component\Security\Core\Authentication\Token\AbstractToken;
 

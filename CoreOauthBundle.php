@@ -1,6 +1,6 @@
 <?php
 
-namespace Meniam\Bundle\CoreOauthBundle;
+namespace Evirma\Bundle\CoreOauthBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 

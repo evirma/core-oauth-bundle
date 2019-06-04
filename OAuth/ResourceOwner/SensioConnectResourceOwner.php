@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Meniam\Bundle\CoreOauthBundle\OAuth\ResourceOwner;
+namespace Evirma\Bundle\CoreOauthBundle\OAuth\ResourceOwner;
 
-use Meniam\Bundle\CoreOauthBundle\OAuth\Response\SensioConnectUserResponse;
+use Evirma\Bundle\CoreOauthBundle\OAuth\Response\SensioConnectUserResponse;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 /**

@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Meniam\Bundle\CoreOauthBundle\OAuth;
+namespace Evirma\Bundle\CoreOauthBundle\OAuth;
 
-use Meniam\Bundle\CoreOauthBundle\OAuth\Exception\HttpTransportException;
-use Meniam\Bundle\CoreOauthBundle\OAuth\Response\UserResponseInterface;
+use Evirma\Bundle\CoreOauthBundle\OAuth\Exception\HttpTransportException;
+use Evirma\Bundle\CoreOauthBundle\OAuth\Response\UserResponseInterface;
 use Symfony\Component\HttpFoundation\Request as HttpRequest;
 use Symfony\Component\Security\Core\Exception\AuthenticationException;
 

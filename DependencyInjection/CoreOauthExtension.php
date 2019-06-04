@@ -1,6 +1,6 @@
 <?php
 
-namespace Meniam\Bundle\CoreOauthBundle\DependencyInjection;
+namespace Evirma\Bundle\CoreOauthBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\Definition;
 use Symfony\Component\DependencyInjection\Reference;
@@ -25,11 +25,11 @@ class CoreOauthExtension extends Extension
         $definition->addArgument([ 'timeout' => 10 ]);
         $container->setDefinition('core_oauth.oauth.guzzle', $definition);
 
-        $definition = new Definition('Meniam\Bundle\CoreOauthBundle\Service\OAuthService');
+        $definition = new Definition('Evirma\Bundle\CoreOauthBundle\Service\OAuthService');
         $definition->addMethodCall('setContainer', [ new Reference('service_container') ]);
         $container->setDefinition('core_oauth.oauth', $definition);
 
-        $definition = new Definition('Meniam\Bundle\CoreOauthBundle\OAuth\RequestDataStorage\SessionStorage');
+        $definition = new Definition('Evirma\Bundle\CoreOauthBundle\OAuth\RequestDataStorage\SessionStorage');
         $definition->addArgument(new Reference('session'));
         $container->setDefinition('core_oauth.oauth.storage.session', $definition);
     }
@@ -37,7 +37,7 @@ class CoreOauthExtension extends Extension
     private function enableServices($config, $globalConfig, ContainerBuilder $container)
     {
         foreach ($config as $id => $serviceConfig) {
-            $className = 'Meniam\\Bundle\\CoreOauthBundle\\OAuth\\ResourceOwner\\' . ucfirst($serviceConfig['resource_owner']) . 'ResourceOwner';
+            $className = 'Evirma\\Bundle\\CoreOauthBundle\\OAuth\\ResourceOwner\\' . ucfirst($serviceConfig['resource_owner']) . 'ResourceOwner';
 
             $definition = new Definition($className);
             $definition->addArgument(new Reference('core_oauth.oauth.guzzle'));
@@ -47,7 +47,7 @@ class CoreOauthExtension extends Extension
             $definition->addArgument(new Reference('core_oauth.oauth.storage.session'));
             $container->setDefinition('core_oauth.oauth.service.' . $id . '.resource_owner', $definition);
 
-            $definition = new Definition('Meniam\\Bundle\\CoreOauthBundle\\Service');
+            $definition = new Definition('Evirma\\Bundle\\CoreOauthBundle\\Service');
             $definition->addArgument($id);
             $definition->addArgument($serviceConfig['title']);
             $definition->addArgument(new Reference('core_oauth.oauth.service.' . $id . '.resource_owner'));

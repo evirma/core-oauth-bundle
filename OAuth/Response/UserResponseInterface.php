@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Meniam\Bundle\CoreOauthBundle\OAuth\Response;
+namespace Evirma\Bundle\CoreOauthBundle\OAuth\Response;
 
-use Meniam\Bundle\CoreOauthBundle\OAuth\ResponseInterface;
-use Meniam\Bundle\CoreOauthBundle\OAuth\OAuthToken;
+use Evirma\Bundle\CoreOauthBundle\OAuth\ResponseInterface;
+use Evirma\Bundle\CoreOauthBundle\OAuth\OAuthToken;
 
 /**
  * @author Alexander <iam.asm89@gmail.com>

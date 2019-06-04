@@ -1,4 +1,4 @@
 <?php
-namespace Meniam\Bundle\CoreOauthBundle\Exception;
+namespace Evirma\Bundle\CoreOauthBundle\Exception;
 
 class ServiceNotFoundException extends \Exception { }
