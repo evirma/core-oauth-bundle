@@ -46,7 +46,7 @@ class CoreOauthExtension extends Extension
             $definition->addArgument($serviceConfig['options']);
             $definition->addArgument($serviceConfig['resource_owner']);
             $definition->addArgument(new Reference('core_oauth.oauth.storage.session'));
-            $definition->setPrivate(false);
+            $definition->setPublic(true);
             $container->setDefinition('core_oauth.oauth.service.' . $id . '.resource_owner', $definition);
 
             $definition = new Definition('Evirma\\Bundle\\CoreOauthBundle\\Service');
@@ -55,7 +55,7 @@ class CoreOauthExtension extends Extension
             $definition->addArgument(new Reference('core_oauth.oauth.service.' . $id . '.resource_owner'));
             $definition->addMethodCall('setUrlGenerator', [ new Reference('router') ]);
             $definition->addMethodCall('setRedirectUriRoute', [ $globalConfig['redirect_uri_route'] ]);
-            $definition->setPrivate(false);
+            $definition->setPublic(true);
             $container->setDefinition('core_oauth.oauth.service.' . $id, $definition);
         }
     }
