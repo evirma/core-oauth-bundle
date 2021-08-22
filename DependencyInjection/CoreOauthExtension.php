@@ -31,7 +31,7 @@ class CoreOauthExtension extends Extension
         $container->setDefinition(OAuthService::class, $definition);
 
         $definition = new Definition('Evirma\Bundle\CoreOauthBundle\OAuth\RequestDataStorage\SessionStorage');
-        $definition->addArgument(new Reference('session'));
+        $definition->addArgument(new Reference('request_stack'));
         $container->setDefinition('core_oauth.oauth.storage.session', $definition);
     }
 
