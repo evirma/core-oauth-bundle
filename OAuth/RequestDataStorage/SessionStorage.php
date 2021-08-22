@@ -13,6 +13,8 @@ namespace Evirma\Bundle\CoreOauthBundle\OAuth\RequestDataStorage;
 
 use Evirma\Bundle\CoreOauthBundle\OAuth\RequestDataStorageInterface;
 use Evirma\Bundle\CoreOauthBundle\OAuth\ResourceOwnerInterface;
+use InvalidArgumentException;
+use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 /**
@@ -24,17 +26,14 @@ use Symfony\Component\HttpFoundation\Session\SessionInterface;
  */
 class SessionStorage implements RequestDataStorageInterface
 {
-    /**
-     * @var SessionInterface
-     */
-    private $session;
+    private RequestStack $requestStack;
 
     /**
-     * @param SessionInterface $session
+     * @param RequestStack     $requestStack
      */
-    public function __construct(SessionInterface $session)
+    public function __construct(RequestStack $requestStack)
     {
-        $this->session = $session;
+        $this->requestStack = $requestStack;
     }
 
     /**
@@ -42,13 +41,13 @@ class SessionStorage implements RequestDataStorageInterface
      */
     public function fetch(ResourceOwnerInterface $resourceOwner, $key, $type = 'token')
     {
-        $key = $this->generateKey($resourceOwner, $key, $type);
-        if (null === $token = $this->session->get($key)) {
-            throw new \InvalidArgumentException('No data available in storage.');
+        $key = $this->generateKey($resourceOwner, (string)$key, (string)$type);
+        if (null === $token = $this->getSession()->get($key)) {
+            throw new InvalidArgumentException('No data available in storage.');
         }
 
         // request tokens are one time use only
-        $this->session->remove($key);
+        $this->getSession()->remove($key);
 
         return $token;
     }
@@ -60,15 +59,15 @@ class SessionStorage implements RequestDataStorageInterface
     {
         if ('token' === $type) {
             if (!is_array($value) || !isset($value['oauth_token'])) {
-                throw new \InvalidArgumentException('Invalid request token.');
+                throw new InvalidArgumentException('Invalid request token.');
             }
 
-            $key = $this->generateKey($resourceOwner, $value['oauth_token'], 'token');
+            $key = $this->generateKey($resourceOwner, (string)$value['oauth_token'], 'token');
         } else {
-            $key = $this->generateKey($resourceOwner, is_array($value) ? reset($value) : $value, $type);
+            $key = $this->generateKey($resourceOwner, (string)(is_array($value) ? reset($value) : $value), (string)$type);
         }
 
-        $this->session->set($key, $value);
+        $this->getSession()->set($key, $value);
     }
 
     /**
@@ -80,8 +79,13 @@ class SessionStorage implements RequestDataStorageInterface
      *
      * @return string
      */
-    protected function generateKey(ResourceOwnerInterface $resourceOwner, $key, $type)
+    protected function generateKey(ResourceOwnerInterface $resourceOwner, string $key, string $type): string
     {
-        return sprintf('_hwi_oauth.%s.%s.%s.%s', $resourceOwner->getName(), $resourceOwner->getOption('client_id'), $type, $key);
+        return sprintf('_core_oauth.%s.%s.%s.%s', $resourceOwner->getName(), $resourceOwner->getOption('client_id'), $type, $key);
+    }
+
+    private function getSession(): SessionInterface
+    {
+        return $this->requestStack->getSession();
     }
 }

@@ -18,11 +18,11 @@ class OAuthService
      */
     public function getService($id)
     {
-        if (!$this->container->has('core_oauth.oauth.service.' . $id)) {
-            throw new ServiceNotFoundException();
+        if ($this->container->has('core_oauth.oauth.service.' . $id)) {
+            return $this->container->get('core_oauth.oauth.service.' . $id);
         }
-        $service = $this->container->get('core_oauth.oauth.service.' . $id);
-        return $service;
+
+        throw new ServiceNotFoundException();
     }
 
     /**
