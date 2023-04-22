@@ -11,9 +11,8 @@
 
 namespace Evirma\Bundle\CoreOauthBundle\OAuth\Exception;
 
-use Symfony\Component\Security\Core\Exception\AuthenticationException;
 
-class HttpTransportException extends AuthenticationException
+class HttpTransportException extends \Exception
 {
     private $ownerName;
 

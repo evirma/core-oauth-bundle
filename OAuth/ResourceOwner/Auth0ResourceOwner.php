@@ -93,12 +93,7 @@ class Auth0ResourceOwner extends GenericOAuth2ResourceOwner
         $resolver->setNormalizer('infos_url', $normalizer);
     }
 
-    /**
-     * @param array $headers
-     *
-     * @return array
-     */
-    private function getRequestHeaders(array $headers = array())
+    private function getRequestHeaders(array $headers = []): array
     {
         if (isset($this->options['auth0_client'])) {
             $headers['Auth0-Client'] = $this->options['auth0_client'];
